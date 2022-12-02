@@ -12,7 +12,7 @@ const ingredientsList = option => {
   return ingredients.map(option => {
     const liElement = document.createElement('li')
     liElement.classList.add('elements')
-    liElement.style.textDecoder = 'none'
+    liElement.style.listStyle = 'none'
     liElement.textContent = option
     return liElement
   })
@@ -22,3 +22,4 @@ const ingredientsList = option => {
 const elementsList = ingredientsList(ingredients);
 list.append(...elementsList);
 console.log(ingredients);
+
