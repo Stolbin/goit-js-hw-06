@@ -12,3 +12,45 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+const gallery = document.querySelector('.gallery');
+gallery.style.display = 'flex';
+gallery.style.flexDirection = 'column';
+gallery.style.alignItems = 'center';
+gallery.style.paddingTop = '5px';
+gallery.style.listStyle = 'none';
+gallery.style.boxShadow = "1px 1px 1px rgba(0, 0, 0, 0.12),1px 1px 4px 4px rgba(0, 0, 0, 0.06),1px 4px 6px rgba(0, 0, 0, 0.16)";
+gallery.textContent = '2 Bарианта';
+
+// TODO 1.
+
+const makeImageItem = ({url, alt}) => {
+  const imgItem = document.createElement('li');
+  const picture = document.createElement('img');
+  picture.src = url;
+  picture.alt = alt;
+  picture.style.width = '400px';
+
+  imgItem.append(picture)
+
+  return imgItem
+};
+const els = images.map(makeImageItem);
+gallery.append(...els)
+
+
+// TODO 2.
+
+const imgItems = images
+  .map(images => 
+    `<li>
+    <img
+    src="${images.url}";
+    alt="${images.alt}";
+    width = '400px';
+    >
+  </li>`)
+  .join("");
+
+  gallery.insertAdjacentHTML("beforeend", imgItems);
