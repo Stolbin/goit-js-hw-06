@@ -20,9 +20,6 @@ gallery.style.flexDirection = 'column';
 gallery.style.alignItems = 'center';
 gallery.style.paddingTop = '5px';
 gallery.style.listStyle = 'none';
-gallery.style.boxShadow = "1px 1px 1px rgba(0, 0, 0, 0.12),1px 1px 4px 4px rgba(0, 0, 0, 0.06),1px 4px 6px rgba(0, 0, 0, 0.16)";
-gallery.textContent = '2 Bарианта';
-
 // TODO 1.
 
 const makeImageItem = ({url, alt}) => {
