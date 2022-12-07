@@ -20,6 +20,7 @@ gallery.style.flexDirection = 'column';
 gallery.style.alignItems = 'center';
 gallery.style.paddingTop = '5px';
 gallery.style.listStyle = 'none';
+
 // TODO 1.
 
 const makeImageItem = ({url, alt}) => {
@@ -28,6 +29,7 @@ const makeImageItem = ({url, alt}) => {
   picture.src = url;
   picture.alt = alt;
   picture.style.width = '400px';
+  picture.style.boxShadow = '7px 2px 5px #ccc';
 
   imgItem.append(picture)
 
@@ -35,7 +37,6 @@ const makeImageItem = ({url, alt}) => {
 };
 const els = images.map(makeImageItem);
 gallery.append(...els)
-
 
 // TODO 2.
 
@@ -46,8 +47,17 @@ const imgItems = images
     src="${images.url}";
     alt="${images.alt}";
     width = '400px';
+    //! box-shadow: 7px 2px 5px #ccc;
     >
   </li>`)
   .join("");
-
   gallery.insertAdjacentHTML("beforeend", imgItems);
+
+
+  //! Питання:
+  //? Чому я не можу задати всім картинкам тінь, що я не так роблю?
+  //? І при створенні img вище по коду, прописую, теж не спрацьовує
+  //? Спробував 2 варіанти і щось пішло не так, один варінт вище, виділенний червоним, другий нижче:
+
+  // const imgShadow = document.querySelectorAll('.pictureImg')
+  // imgShadow.style.boxShadow = '10px 10px 5px #ccc';
