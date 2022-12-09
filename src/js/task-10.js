@@ -1,5 +1,4 @@
 const inputScoreBoxsRef = document.querySelector('.controls input');
-const controlsBoxsRef = document.querySelector('.controls');
 const btnCreateRef = document.querySelector('[data-create]');
 const btnDestroyRef = document.querySelector('[data-destroy]');
 const boxRef = document.querySelector('#boxes');
@@ -19,7 +18,7 @@ function createBoxes(amount) {
       defaultBox.style.width = 'defaultBox.style.width + 10px';
       defaultBox.style.height = 'defaultBox.style.height + 10px';
       defaultBox.push(defaultBox);
-      return boxRef.append(...defaultBox); 
+      boxRef.append(...defaultBox); 
     }
 };
 
@@ -31,5 +30,5 @@ btnCreateRef.addEventListener('click', createBoxes);
 btnDestroyRef.addEventListener('click', destroyBoxes);
 
 function destroyBoxes() {
-  controlsBoxsRef.reset();
+  inputScoreBoxsRef.reset();
 };
