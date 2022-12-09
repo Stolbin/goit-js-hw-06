@@ -32,3 +32,18 @@ btnDestroyRef.addEventListener('click', destroyBoxes);
 function destroyBoxes() {
   btnCreateRef.reset();
 }
+
+
+// function createBoxes(amount) {
+//   const boxes = [];
+//   const defaultSizeBox = '30';
+//   const defaultBox = `<div style="width:${defaultSizeBox}px; height:${defaultSizeBox}px></div>`;
+//   for (let i = 0; i < amount; i+=i) {
+//     boxes += defaultBox;
+//     defaultBox = `<div style="width:${defaultSizeBox += 10}px; height:${defaultSizeBox += 10}px></div>`;
+//     defaultBox.style.backgroundColor = getRandomHexColor();
+//     defaultBox.push(defaultBox);
+//   }
+//   boxRef.append(...boxes);
+//   // boxRef.insertAdjacentHTML('afterbegin', boxes)
+// }
