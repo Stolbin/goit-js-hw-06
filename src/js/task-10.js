@@ -3,47 +3,32 @@ const btnCreateRef = document.querySelector('[data-create]');
 const btnDestroyRef = document.querySelector('[data-destroy]');
 const boxRef = document.querySelector('#boxes');
 
-btnCreateRef.addEventListener('click', createBoxes);
-
-
 function getAmount() {
   const amount = inputScoreBoxsRef.value;
   return amount;
 };
 
-
-function createBoxes(amount) {
-  const defaultSizeBox = '30';
-  const defaultBox = `<div style="width:${defaultSizeBox}px; height:${defaultSizeBox}px"></div>`;
-  for (let i = 0; i < amount; i+=i) {
-    boxes += defaultBox;
-    defaultBox = `<div style="width:${defaultSizeBox += 10}px; height:${defaultSizeBox += 10}px"></div>`;
-    defaultBox.style.backgroundColor = getRandomHexColor();
-  }
-  boxRef.insertAdjacentHTML('afterbegin', boxes)
-}
+function createBoxes(amount) {    
+  const defaultBox = document.createElement('div');
+  defaultBox.style.width = '30px';
+  defaultBox.style.height = '30px';
+  defaultBox.style.backgroundColor = getRandomHexColor();
+    for (let i = 0; i < amount; i+=i) {
+      boxRef += defaultBox;
+      defaultBox.style.width = 'defaultBox.style.width + 10px';
+      defaultBox.style.height = 'defaultBox.style.height + 10px';
+      defaultBox.push(defaultBox);
+      boxRef.append(...defaultBox); 
+    }
+};
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
+};
 
+btnCreateRef.addEventListener('click', createBoxes);
 btnDestroyRef.addEventListener('click', destroyBoxes);
 
 function destroyBoxes() {
-  btnCreateRef.reset();
-}
-
-
-// function createBoxes(amount) {
-//   const boxes = [];
-//   const defaultSizeBox = '30';
-//   const defaultBox = `<div style="width:${defaultSizeBox}px; height:${defaultSizeBox}px></div>`;
-//   for (let i = 0; i < amount; i+=i) {
-//     boxes += defaultBox;
-//     defaultBox = `<div style="width:${defaultSizeBox += 10}px; height:${defaultSizeBox += 10}px></div>`;
-//     defaultBox.style.backgroundColor = getRandomHexColor();
-//     defaultBox.push(defaultBox);
-//   }
-//   boxRef.append(...boxes);
-//   // boxRef.insertAdjacentHTML('afterbegin', boxes)
-// }
+  inputScoreBoxsRef.reset();
+};
