@@ -16,6 +16,8 @@ function validForm(event) {
             email,
             password,
         }
+        console.log(`Email: ${email}`);
+        console.log(`Password: ${password}`);
         formRef.reset();
 } 
 
