@@ -13,13 +13,16 @@ function createBoxes(amount) {
   defaultBox.style.width = '30px';
   defaultBox.style.height = '30px';
   defaultBox.style.backgroundColor = getRandomHexColor();
-  const allBoxes = "";
+  const allBoxes = [];
     for (let i = 0; i < amount; i+=i) {
       allBoxes += defaultBox;
       defaultBox.style.width = 'defaultBox.style.width + 10px';
       defaultBox.style.height = 'defaultBox.style.height + 10px';
+      allBoxes.push(allBoxes);
+      boxRef.append(...allBoxes);
     }
-    boxRef.insertAdjacentHTML('afterbegin', allBoxes);
+
+    // boxRef.insertAdjacentHTML('afterbegin', allBoxes);
 };
 
 function getRandomHexColor() {
