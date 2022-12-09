@@ -13,12 +13,12 @@ function getAmount() {
 
 
 function createBoxes(amount) {
-  const defaultSizeBox = '30px';
-  const defaultBox = `<div style = "width: ${defaultSizeBox}px; height: ${defaultSizeBox}px></div>`;
+  const defaultSizeBox = '30';
+  const defaultBox = `<div style="width:${defaultSizeBox}px; height:${defaultSizeBox}px"></div>`;
   for (let i = 0; i < amount; i+=i) {
     boxes += defaultBox;
-    defaultBox = `<div style = "width: ${defaultSizeBox += 10}px; height: ${defaultSizeBox += 10}px></div>`;
-    boxes.style.backgroundColor = getRandomHexColor();
+    defaultBox = `<div style="width:${defaultSizeBox += 10}px; height:${defaultSizeBox += 10}px"></div>`;
+    defaultBox.style.backgroundColor = getRandomHexColor();
   }
   boxRef.insertAdjacentHTML('afterbegin', boxes)
 }
