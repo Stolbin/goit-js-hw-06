@@ -7,12 +7,14 @@ function getAmount(event) {
   createBoxes(Number(inputScoreBoxesRef.value));
 };
 
-function createBoxes(amount) {
-  if (inputScoreBoxesRef.value > 100) {
-    alert('Будь ласка, введіть число від 1 до 100');
+function alertOnBtnCreate(event) {
+  if (inputScoreBoxesRef.value > 100 || inputScoreBoxesRef.value <= 0) {
+    alert("Будь ласка, введіть число від 1 до 100");
     destroyBoxes();
     return;
   }
+}
+function createBoxes(amount) {
   const size = 30;
   let allBoxes = document.createDocumentFragment();
   for (let i = 0; i < amount; i += 1) {
@@ -24,22 +26,20 @@ function createBoxes(amount) {
     }
     boxRef.appendChild(allBoxes);
  };
-  
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+ function getRandomHexColor() {
+   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
   };
   
   function handleOnClickBtnCreateBoxes(event) {
-  getAmount();
-  createBoxes();
-}
-
-btnCreateRef.addEventListener('click', handleOnClickBtnCreateBoxes);
-btnDestroyRef.addEventListener('click', destroyBoxes);
+    getAmount();
+    createBoxes();
+    alertOnBtnCreate();
+  }
+  
+  btnCreateRef.addEventListener('click', handleOnClickBtnCreateBoxes);
+  btnDestroyRef.addEventListener('click', destroyBoxes);
 
 function destroyBoxes() {
   boxRef.innerHTML = "";
   inputScoreBoxesRef.value = "";
 }; 
-
-
