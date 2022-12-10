@@ -30,7 +30,6 @@ function getRandomHexColor() {
   alertOnInput();
 }
 
-inputScoreBoxesRef.addEventListener('change', getAmount);
 btnCreateRef.addEventListener('click', handleOnClickBtnCreateBoxes);
 btnDestroyRef.addEventListener('click', destroyBoxes);
 
