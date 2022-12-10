@@ -6,10 +6,10 @@ const outpRef = document.querySelector("#name-output");
 // };
 
 inputRef.addEventListener("input", function onFormInput(event) {
-        event.currentTarget.value;
-            outpRef.textContent = event.currentTarget.value;
-                if (event.currentTarget.value === "") {
-                    return outpRef.textContent = "Anonymous";
-                }
+    event.currentTarget.value;
+    outpRef.textContent = event.currentTarget.value;
+    if (event.currentTarget.value === "") {
+        return outpRef.textContent = "Anonymous";
     }
+}
 )
