@@ -9,16 +9,16 @@ function getAmount(event) {
 
 function createBoxes(amount) {
   const size = 30;
-  let allBoxes = '';
-  for (let i = 1; i < amount; i += 1) {
-    let box = document.createElement(`div`);
-    allBoxes += box;
-    box.style.width = `((${size} + i) + 10)px`;
-    box.style.height = `((${size} + i) + 10)px`;
-    box.style.background = getRandomHexColor();
-  }
-  boxRef.insertAdjacentHTML('afterbegin', allBoxes);
-};
+  let allBoxes = document.createDocumentFragment();
+  for (let i = 0; i < amount; i += 1) {
+      let defaultBox = document.createElement("div");
+      defaultBox.style.width = size + i * 10 + 'px';
+      defaultBox.style.height = size + i * 10 + 'px';
+      defaultBox.style.backgroundColor = getRandomHexColor();
+      allBoxes.append(defaultBox);
+    }
+    boxRef.append(allBoxes);
+ };
   
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
