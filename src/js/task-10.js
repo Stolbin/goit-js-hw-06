@@ -11,11 +11,11 @@ function createBoxes(amount) {
   const size = 30;
   let allBoxes = document.createDocumentFragment();
   for (let i = 0; i < amount; i += 1) {
-      let defaultBox = document.createElement("div");
-      defaultBox.style.width = size + i * 10 + 'px';
-      defaultBox.style.height = size + i * 10 + 'px';
-      defaultBox.style.backgroundColor = getRandomHexColor();
-      allBoxes.append(defaultBox);
+      let box = document.createElement("div");
+      box.style.width = size + i * 10 + 'px';
+      box.style.height = size + i * 10 + 'px';
+      box.style.backgroundColor = getRandomHexColor();
+      allBoxes.append(box);
     }
     boxRef.append(allBoxes);
  };
