@@ -8,6 +8,11 @@ function getAmount(event) {
 };
 
 function createBoxes(amount) {
+  if (inputScoreBoxesRef.value > 100) {
+    alert('Будь ласка, введіть число від 1 до 100');
+    destroyBoxes();
+    return;
+  }
   const size = 30;
   let allBoxes = document.createDocumentFragment();
   for (let i = 0; i < amount; i += 1) {
@@ -27,7 +32,6 @@ function getRandomHexColor() {
   function handleOnClickBtnCreateBoxes(event) {
   getAmount();
   createBoxes();
-  alertOnInput();
 }
 
 btnCreateRef.addEventListener('click', handleOnClickBtnCreateBoxes);
@@ -38,11 +42,4 @@ function destroyBoxes() {
   inputScoreBoxesRef.value = "";
 }; 
 
-function alertOnInput (event) {
-  if (inputScoreBoxesRef.value > 100) {
-    alert('Будь ласка, введіть число меньше 100');
-    destroyBoxes();
-    createBoxes();
-    return;
-  }
-};
+
