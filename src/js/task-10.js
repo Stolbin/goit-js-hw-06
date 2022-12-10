@@ -20,9 +20,9 @@ function createBoxes(amount) {
       box.style.width = size + i * 10 + 'px';
       box.style.height = size + i * 10 + 'px';
       box.style.backgroundColor = getRandomHexColor();
-      allBoxes.append(box);
+      allBoxes.appendChild(box);
     }
-    boxRef.append(allBoxes);
+    boxRef.appendChild(allBoxes);
  };
   
 function getRandomHexColor() {
