@@ -8,4 +8,4 @@ function focusOninputRef(event) {
         inputRef.classList.add('valid')
     } else         
     inputRef.classList.add('invalid')
-    }   
+}   
